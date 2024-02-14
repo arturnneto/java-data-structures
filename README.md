@@ -11,6 +11,9 @@ Array lists:
 - Together in memory;
 
 Linked Lists:
+Lists composed by nodes, which have a pointer to the next item (node) in the list.
+It has two important nodes: Head, which is the start of the list, and Tail, which is the end of the list.
+Linked lists can kinda be compared to hash maps.
 - Dynamic length;
 - No indexes;
 - Spreaded in memory;
@@ -28,3 +31,7 @@ Linked Lists:
   - Looking for a specific item, even using its index: O(N);
 - Takes up more memory;
 - Not so much optimized for iteration.
+
+
+Doubly Linked Lists:
+The same as linked lists, but this one has pointers to the previous node as well.

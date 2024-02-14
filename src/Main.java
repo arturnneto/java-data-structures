@@ -1,7 +1,9 @@
 public class Main {
 
     public static void main(String[] args) {
+    }
 
+    public static void LinkedListsTest(String[] args) {
         LinkedList myLinkedList = new LinkedList(1);
 
         myLinkedList.append(2);
@@ -55,5 +57,9 @@ public class Main {
         System.out.println();
         myLinkedList.reverse();
         myLinkedList.printList();
+    }
+
+    public static void DoublyLinkedListsTest(String[] args) {
+
     }
 }
