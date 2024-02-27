@@ -78,3 +78,18 @@ and delete, but in worst cases, it becomes O(N).
   - Insert: O(logN)*;
   - Delete: O(logN)*;
   - Search: O(logN)*;
+
+Hash Tables:
+- Hash tables are characterized by the use of key value pairs to store data.
+- They use hashing to efficiently store and access values.
+- Hashing is a method used to convert keys into hash codes, that determine where the corresponding value will be stored.
+- Sometimes, we can have collisions, where different key hashes would be added in the same place.
+  - We can address this problem by adding them in the next open space in our hash table, or:
+  - Creating another data structure into the specific index, like a linked list, for example.
+- When analyzing hash tables Big O, we need to consider:
+  - It offer an average case complexity of O(1) for insertion, deletion and retrieval.
+  - But it can degrade to O(N) in the worst case, if collisions are frequent and the hashing distributed keys poorly.
+- Big Os:
+  - Insert: O(1)*;
+  - Delete: O(1)*;
+  - Search: O(1)*;
