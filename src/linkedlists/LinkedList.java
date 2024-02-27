@@ -1,3 +1,29 @@
+package linkedlists;
+
+/*
+Linked Lists:
+- Lists composed by nodes, which have a pointer to the next item (node) in the list.
+- It has two important nodes: Head, which is the start of the list, and Tail, which is the end of the list.
+- Linked lists can kinda be compared to hash maps.
+- Dynamic length;
+- No indexes;
+- Spreaded in memory;
+- Pointers:
+  - Each item have a pointer to the next item of the list;
+  - Head and Tail represent the first and last item of the list;
+  - The last item has a null pointer.
+- Big Os:
+  - Append: O(1);
+  - Remove last item: O(N);
+  - Prepend: O(1);
+  - Remove First: O(1);
+  - Insert: O(N);
+  - Remove: O(N);
+  - Get: O(N);
+- Takes up more memory;
+- Not so much optimized for iteration.
+ */
+
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -116,13 +142,13 @@ public class LinkedList {
         length--;
 
         // If the list had a length of 1, the tail needs to be set to null
-        if (length == 0) tail = null;
+        if (length == 0) { tail = null; }
 
         return temp;
     }
 
     public Node get(int index) {
-        if (index < 0 || index >= length) return null;
+        if (index < 0 || index >= length) { return null; }
 
         // Iterates from the head to the needed index
         Node temp = head;
@@ -174,7 +200,7 @@ public class LinkedList {
     }
 
     public Node remove(int index) {
-        if (index < 0 || index > length) return null;
+        if (index < 0 || index >= length) return null;
         // If the node to be removed is at the start of the list, use the removeFirst method
         if (index == 0) return removeFirst();
         // If the node to be removed is at the end of the list, use the removeLast method
@@ -189,8 +215,8 @@ public class LinkedList {
         prev.next = temp.next;
         // Removes the next pointer of the temp node, which will leave it without any pointers
         temp.next = null;
-        length--;
 
+        length--;
         return temp;
     }
 

@@ -1,4 +1,20 @@
-public class DoublyLinkedLists {
+package doublylinkedlists;
+
+/*
+Doubly Linked Lists:
+- The same as linked lists, but this one has pointers to the previous node as well.
+- This can make some operations slightly more efficient, such as Insert, Remove and Get.
+- Big Os:
+  - Append: O(1);
+  - Remove last item: O(N);
+  - Prepend: O(1);
+  - Remove First: O(1);
+  - Insert: O(N/2 = N);
+  - Remove: O(N/2 = N);
+  - Get: O(N/2 = N).
+ */
+
+public class DoublyLinkedList {
 
     private Node head;
     private Node tail;
@@ -14,7 +30,7 @@ public class DoublyLinkedLists {
         }
     }
 
-    public void DoublyLinkedList(int value) {
+    public DoublyLinkedList(int value) {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
@@ -148,6 +164,7 @@ public class DoublyLinkedLists {
     public boolean set(int index, int value) {
         // Creates a temporary node, which will hold the value to be set and get the index using the get method
         Node temp = get(index);
+        // Checks if temp got an valid node, then updates the node's value.
         if (temp != null) {
             temp.value = value;
             return true;
@@ -158,7 +175,7 @@ public class DoublyLinkedLists {
     }
 
     public boolean insert(int index, int value) {
-        if (index < 0 || index >= length) { return false; }
+        if (index < 0 || index > length) { return false; }
         // If the new node will be added at the start of the list (index 0), we use the prepend method
         if (index == 0) {
             prepend(value);
@@ -183,6 +200,7 @@ public class DoublyLinkedLists {
         before.next = newNode;
         after.prev = newNode;
 
+        length++;
         return true;
     }
 
@@ -193,7 +211,7 @@ public class DoublyLinkedLists {
             return removeFirst();
         }
         // If the node to be removed is at the end of the list (index length), we use the removeLast method
-        if (index == length) {
+        if (index == length - 1) {
             return removeLast();
         }
 
