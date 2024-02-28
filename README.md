@@ -1,17 +1,38 @@
+# Data Structures - Java
+
 This folder contains a wide range of content about data structures in Java. Additionally, this README file is also a quick review about them.
 
-Useful website: https://www.bigocheatsheet.com/
+![Big O table for sorting algorithms](https://paulonteri.com/dsa/assets/images/Common_Data_Structure_Operations-9cfc3652a9e02d4b146845ad8f24f365.png)
+Useful website for checking time and space complexties: https://www.bigocheatsheet.com/  
+Algorithms repository: https://github.com/arturnneto/java-algorithms
 
-Arrays:
+---
+
+### Arrays:
 - Arrays have fixed length, so they are immutable in terms of size;
 - Together in memory;
+- Big O's:
+  - Get: O(1);
+  - Search: O(logN) for Binary Search (If Sorted), O(N) for Linear Search;
+  - Insert: O(N) at beginning or middle, O(1) at the end;
+  - Delete: O(N) at beginning or middle, O(1) at the end.
 
-Array lists:
+---
+
+### Array lists:
 - Array lists have dynamic length, so you do not need to bother about size at its creation;
 - Together in memory;
 - Although they are more flexible, they may demand more memory usage than arrays, since they do dynamic resizing.
+- Big O's:
+  - Get: O(1);
+  - Search: O(logN) for Binary Search (If sorted), O(N) for Linear Search;
+  - Insert: O(N) at beginning or middle, O(1) at the end;
+  - Delete: O(N) at beginning or middle, O(1) at the end.
 
-Linked Lists:
+
+---
+
+### Linked Lists:
 - Lists composed by nodes, which have a pointer to the next item (node) in the list.
 - It has two important nodes: Head, which is the start of the list, and Tail, which is the end of the list.
 - Linked lists can kinda be compared to hash maps.
@@ -33,8 +54,9 @@ Linked Lists:
 - Takes up more memory;
 - Not so much optimized for iteration.
 
+---
 
-Doubly Linked Lists:
+### Doubly Linked Lists:
 - The same as linked lists, but this one has pointers to the previous node as well.
 - This can make some operations slightly more efficient, such as Insert, Remove and Get.
 - Big Os:
@@ -46,7 +68,9 @@ Doubly Linked Lists:
   - Remove: O(N/2 = N);
   - Get: O(N/2 = N).
 
-Stacks:
+---
+
+### Stacks:
 - Works like a... stack.
 - We can only remove and add items at the top of the stack.
 - Big Os:
@@ -55,14 +79,18 @@ Stacks:
   - Get: O(N);
   - Get First: O(1).
   
-Queues:
+---
+
+### Queues:
 - In queues, we can only add elements at the end of the queue, and remove elements at the start of the queue.
 - Big Os:
   - Append: O(1);
   - Remove: O(1);
   - Get: O(N).
 
-Binary Search Trees:
+---
+
+### Binary Search Trees:
 - BSTs are composed by nodes, which have two pointers: Left and Right.
 - In a BST, when we are analyzing the value of a node, all nodes to the left of this node will be smaller than it, and
 all values to the right, bigger.
@@ -79,7 +107,9 @@ and delete, but in worst cases, it becomes O(N).
   - Delete: O(logN)*;
   - Search: O(logN)*;
 
-Hash Tables:
+---
+
+### Hash Tables:
 - Hash tables are characterized by the use of key value pairs to store data.
 - They use hashing to efficiently store and access values.
 - Hashing is a method used to convert keys into hash codes, that determine where the corresponding value will be stored.
