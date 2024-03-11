@@ -123,3 +123,30 @@ and delete, but in worst cases, it becomes O(N).
   - Insert: O(1)*;
   - Delete: O(1)*;
   - Search: O(1)*;
+
+---
+
+### Graphs:
+- Composed by vertexes(or nodes) and edges(or connections).
+- The vertexes can have more than one edge.
+- Edges can have values, or weights.
+- Edges can be directional or bidirectional.
+- Graphs can be represented as a Adjacency Matrix, or as a Adjacency List.
+- Adjacency Matrices are like normal tables, where we have the axes X and Y representing the graph's vertexes and what other
+vertexes it connects to.
+- Adjacency lists can be represented with hash maps, where we wil have key value pairs of a vertex and it's edges, for example,
+"A"=["B","C"]. Here, we are saying that the vertex A have edges with vertexes B and C.
+- Big Os of Adjacency Matrices:
+  - Space Complexity: O(|V|^2)
+  - Insert Vertex: O(|V|^2);
+  - Add Edge: O(1);
+  - Delete Vertex: O(|V|^2);
+  - Remove Edge: O(1);
+  - Search: O(1);
+- Big Os of Adjacency Lists:
+  - Space Complexity: O(|V|+|E|)
+  - Insert Vertex: O(1);
+  - Add Edge: O(1)
+  - Delete Vertex: O(|V|+|E|);
+  - Remove Edge: O(|E|);
+  - Search: O(1);

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BinarySearchTreeTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-03-11T13:28:50" hostname="DESKTOP-1GSB5UU" time="0.042">
+  <properties/>
+  <testcase name="valuesShouldBeUnique()" classname="BinarySearchTreeTest" time="0.023"/>
+  <testcase name="firstValueShouldBeRoot()" classname="BinarySearchTreeTest" time="0.002"/>
+  <testcase name="existingValueShouldReturnTrue()" classname="BinarySearchTreeTest" time="0.002"/>
+  <testcase name="nonExistingValueShouldReturnFalse()" classname="BinarySearchTreeTest" time="0.002"/>
+  <testcase name="insertShouldEqualTrue()" classname="BinarySearchTreeTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

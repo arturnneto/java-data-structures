@@ -33,6 +33,10 @@ public class BinarySearchTree {
         }
     }
 
+    public int getRootValue() {
+        return root.value;
+    }
+
     public boolean insert(int value) {
         Node newNode = new Node(value);
         // If the BST is empty, the new node becomes the root of the tree
@@ -42,7 +46,7 @@ public class BinarySearchTree {
         }
         // Creates a temporary node at the root, to start checking for a place to insert the new node
         Node temp = root;
-        // Iterates through the BST untill the node is inserted
+        // Iterates through the BST until the node is inserted
         while (true){
             // Checks if the value is already at the tree, if it is, returns false and breaks the loop
             if (newNode.value == temp.value) { return false; }
@@ -70,7 +74,7 @@ public class BinarySearchTree {
     public boolean contains(int value) {
         // Creates a temporary node at the rood, to start the iteration on the BST
         Node temp = root;
-        // Iterates untill temp equals to null, which means we reached the bottom of the tree
+        // Iterates until temp equals to null, which means we reached the bottom of the tree
         while (temp != null) {
             // If the node we are checking is bigger than the value we are searching, we go left
             if (value < temp.value) {
