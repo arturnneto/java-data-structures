@@ -150,3 +150,18 @@ vertexes it connects to.
   - Delete Vertex: O(|V|+|E|);
   - Remove Edge: O(|E|);
   - Search: O(1);
+
+---
+
+### Heaps:
+- Heaps are very similar to BSTs.
+- Heaps are always complete.
+- Heaps can have duplicate values.
+- In heaps, we can have the maximum or the minimum value at the top, and each subsequent value will be either smaller 
+than the top, in a maximum heap, or bigger, in a minimum heap.
+- Heaps can be represented as an Array List, where we will use indexes managed by a mathematical expression to store the
+items.
+- In this representation, we can use or not use the first (0) index of the list.
+- We can represent the left child of a value like this: Left Child = Parent Index * 2;
+- We can represent the right child of a value like this: Right Child = Parent Index * 2 + 1;
+- To find a value's parent, we can just divide it's index by 2, ignoring decimal values.
