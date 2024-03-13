@@ -1,19 +1,80 @@
 plugins {
     id 'java'
     id 'idea'
+    id 'jacoco'
+    id "com.adarshr.test-logger" version "4.0.0"
 }
 
+ext {
+    junit_version = "5.10.2"
+}
 repositories {
+    mavenLocal()
     mavenCentral()
+    maven {url "https://plugins.gradle.org/m2/"}
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testImplementation (
+            "org.junit.jupiter:junit-jupiter:${junit_version}",
+            "org.junit.jupiter:junit-jupiter-params:${junit_version}"
+    )
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 test {
-    useJUnitPlatform()
+
+    description = "Executa testes. Para executar tags específicas, use: gradle clean test -Dtag=tagname."
+    testLogging.showStandardStreams = true
+    String tag = System.properties.getProperty("tag")
+
+    systemProperties = [
+            'junit.jupiter.extensions.autodetection.enabled': 'true'
+    ]
+    useJUnitPlatform(){
+        if (null != tag && !tag.equalsIgnoreCase("")) includeTags String.valueOf(tag)
+    }
+
+    afterSuite { desc, result ->
+        if (!desc.parent) {
+            println "\nTest result: ${result.resultType}"
+            println "Test summary: ${result.testCount} tests, " +
+                    "${result.successfulTestCount} succeeded, " +
+                    "${result.failedTestCount} failed, " +
+                    "${result.skippedTestCount} skipped"
+        }
+    }
+
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+
+testlogger {
+    theme 'mocha'
+    showExceptions true
+    showStackTraces true
+    showFullStackTraces false
+    showCauses true
+    slowThreshold 2000
+    showSummary true
+    showSimpleNames false
+    showPassed true
+    showSkipped true
+    showFailed true
+    showOnlySlow false
+    showStandardStreams false
+    showPassedStandardStreams true
+    showSkippedStandardStreams true
+    showFailedStandardStreams true
+    logLevel 'lifecycle'
 }
 
 sourceSets {
