@@ -1,0 +1,9 @@
+type,scenario,argument,expected,description
+success,first value root,1,true,first value should be root
+success,insert same value,10,false,try to insert a existent value
+success,contains value,22,true,search for a random existent value
+success,non existent value,55,false,search for a non existent value
+fail,integer overflow,MAX_VALUE,integer overflow,Overflow on insert argument
+fail,integer overflow,MIN_VALUE,integer overflow,Overflow on insert argument
+fail,argument exception for letters,abc,For input string: "abc",Exception for wrong parse argument
+fail,argument exception for empty,empty,For input string:,Exception for wrong parse argument

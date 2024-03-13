@@ -89,4 +89,17 @@ public class BinarySearchTree {
         return false;
     }
 
+    public boolean containsRec(Node node, int value){
+        if(node == null) return false;
+        if(node.value == value) return true;
+        return value < node.value ? containsRec(node.left, value): containsRec(node.right, value);
+    }
+
+    public Node getRoot() {
+        return root;
+    }
+
+    public void setRoot(Node root) {
+        this.root = root;
+    }
 }
